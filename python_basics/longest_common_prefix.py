@@ -6,7 +6,7 @@ class Solution:
         prefixLen = len(prefix)
 
         for words in strs[1:]:
-            while prefixLen >= 0 and prefixLen:
+            while prefixLen >= 0 and prefix:
                 if prefix == words[:prefixLen]:
                     break
                 prefixLen -= 1
