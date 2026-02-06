@@ -27,6 +27,7 @@
 # s1.length == s2.length
 # s1 and s2 consist of only lowercase English letters.
 
+# First Solution
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
         if s1 == s2: return True
@@ -42,3 +43,16 @@ class Solution:
                 swapCount += 1
         
         return swapCount == 2 and s1[pos1] == s2[pos2] and s1[pos2] == s2[pos1]
+
+# Second Solution
+class Solution2:
+    def areAlmostEqual(self, s1: str, s2: str) -> bool:
+        if s1 == s2: return True
+
+        swapCount = [] # stores a tuple of characters that are not the same at a particular indicies
+
+        for i in range(len(s1)):
+            if s1[i] != s2[i]:
+                swapCount.append((s1[i], s2[i]))
+
+        return len(swapCount) == 2 and swapCount[0] == swapCount[1][::-1]
