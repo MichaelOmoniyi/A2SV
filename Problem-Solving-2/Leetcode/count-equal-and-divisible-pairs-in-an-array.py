@@ -28,14 +28,14 @@ class Solution:
         countDict = {}
         count = 0
 
-        # Check for repeated number and add the number and its index to the dictionary
+        # Build a dictionary to count each number and store indices
         for index, num in enumerate(nums):
             if num in countDict:
                 countDict[num].append(index)
             else:
                 countDict[num] = [index]
 
-        
+        # check pairs of indices for divisiblility
         for pairs in countDict.values():
             if len(pairs) > 1:
                 for i in range(len(pairs)):
