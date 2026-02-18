@@ -4,7 +4,7 @@ count = 0
 for row in range(5):
     for col in range(5):
         if matrix[row][col] == 1:
-            count += abs(row-col)
+            count = abs(2-row) + abs(2-col)
             break
     if count > 0:
         break
