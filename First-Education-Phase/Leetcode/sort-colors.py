@@ -43,12 +43,23 @@ class Solution:
         # return nums
 
         # Applying Selecton sort
+        # for i in range(len(nums)):
+        #     minIndex = i
+
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[j] <= nums[minIndex]:
+        #             minIndex = j
+        #     nums[i], nums[minIndex] = nums[minIndex], nums[i]
+
+        # return nums
+
+        # Applying Bubble Sort
+        swap = False
         for i in range(len(nums)):
-            minIndex = i
-
-            for j in range(i + 1, len(nums)):
-                if nums[j] <= nums[minIndex]:
-                    minIndex = j
-            nums[i], nums[minIndex] = nums[minIndex], nums[i]
-
-        return nums 
+            for j in range(0, len(nums) - 1):
+                if nums[j + 1] < nums[j]:
+                    nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                    swap = True
+            if swap is False:
+                break
+        return nums
