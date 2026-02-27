@@ -47,3 +47,19 @@ class Solution:
             if nums[i]==target:
                 res.append(i)
         return res
+
+class Solution:
+    def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        targetFreq = 0
+        lessThanTarget = 0
+        res = []
+
+        for num in nums:
+            if num == target:
+                targetFreq += 1
+            elif num < target:
+                lessThanTarget += 1
+            
+        for i in range(targetFreq):
+            res.append(lessThanTarget + i)
+        return res
